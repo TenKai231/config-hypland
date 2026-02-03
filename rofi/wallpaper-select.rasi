@@ -1,0 +1,96 @@
+/***** GALERI WALLPAPER MODE *****/
+
+configuration {
+    modi: "dmenu";
+    show-icons: true;
+    dmenu-display-format: "{name}";
+    font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+/* Import warna Pywal biar border & background matching */
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+window {
+    transparency: "real";
+    width: 70%;              /* Lebar jendela (lebih lebar buat galeri) */
+    height: 70%;             /* Tinggi jendela */
+    border: 3px;
+    border-color: @selected-active-background;
+    border-radius: 20px;
+    background-color: #1e1e2ee0; /* Gelap transparan */
+    padding: 20px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 20px;
+}
+
+inputbar {
+    background-color: transparent;
+    children: [ prompt, entry ];
+    margin: 0 0 10px 0;
+}
+
+prompt {
+    text-color: @foreground;
+    font: "JetBrainsMono Nerd Font Bold 16";
+    padding: 10px;
+    str: "🖼️ PILIH TEMA:";
+}
+
+entry {
+    placeholder: "Cari nama file...";
+    placeholder-color: @foreground;
+    text-color: @foreground;
+    font: "JetBrainsMono Nerd Font 14";
+    padding: 12px;
+    background-color: @background;
+    border-radius: 10px;
+}
+
+listview {
+    background-color: transparent;
+    columns: 4;              /* 4 Gambar ke samping */
+    lines: 2;                /* 2 Baris ke bawah */
+    spacing: 20px;           /* Jarak antar gambar */
+    cycle: false;
+    layout: vertical;
+    scrollbar: false;
+}
+
+element {
+    orientation: vertical;   /* Gambar di ATAS, Teks di BAWAH */
+    padding: 15px;
+    border-radius: 15px;
+    background-color: transparent;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+
+element selected {
+    background-color: @selected-active-background;
+    text-color: @background;
+
+    /* INI PERBAIKANNYA: Dipisah biar gak error */
+    border: 2px;
+    border-color: @foreground;
+}
+
+element-icon {
+    size: 180px;             /* UKURAN GAMBAR PREVIEW (Gede Banget) */
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    background-color: transparent;
+    cursor: inherit;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;   /* Teks di tengah */
+    margin: 10px 0 0 0;
+    background-color: transparent;
+    text-color: inherit;
+}

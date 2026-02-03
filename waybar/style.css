@@ -1,0 +1,83 @@
+/* --- FORMAT KURUNG SATU --- */
+@define-color background {color0};
+@define-color foreground {color15};
+@define-color cursor {color15};
+
+@define-color color0 {color0};
+@define-color color1 {color1};
+@define-color color2 {color2};
+@define-color color3 {color3};
+@define-color color4 {color4};
+@define-color color5 {color5};
+@define-color color6 {color6};
+@define-color color7 {color7};
+@define-color color8 {color8};
+@define-color color9 {color9};
+@define-color color10 {color10};
+@define-color color11 {color11};
+@define-color color12 {color12};
+@define-color color13 {color13};
+@define-color color14 {color14};
+@define-color color15 {color15};
+
+/* ================================================================= */
+/* SETTING WAYBAR */
+/* ================================================================= */
+
+* {
+    border: none;
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: {color15};
+    font-size : 12px;
+}
+
+.modules-left, .modules-center, .modules-right {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces {
+    background-color: {color0};
+    border: 2px solid {color4};
+    border-radius: 15px;
+    margin: 5px 0 5px 10px;
+    padding: 0 5px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: {color15};
+    border-radius: 10px;
+}
+
+#workspaces button.active {
+    background-color: {color4};
+    color: {color0};
+    min-width: 40px;
+}
+
+#workspaces button:hover {
+    background-color: {color2};
+    color: {color0};
+}
+
+#taskbar, #mpris, #clock, #memory, #cpu, .modules-right {
+    background-color: {color0};
+    border: 2px solid {color4};
+    border-radius: 15px;
+    color: {color4};
+    margin: 5px;
+    padding: 0 10px;
+}
+
+#taskbar button { color: {color15}; }
+#taskbar button.active { background-color: {color4}; color: {color0}; }
+
+#tray, #battery, #pulseaudio, #network { color: {color15}; margin: 0 5px; }

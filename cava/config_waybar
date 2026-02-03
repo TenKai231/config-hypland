@@ -1,0 +1,16 @@
+[general]
+framerate = 60
+# Jumlah batang (sesuaikan kalau mau lebih panjang/pendek)
+bars = 12
+
+[input]
+# INI KUNCINYA: Pakai pulse biar stabil kayak di terminal tadi
+method = pulse
+source = auto
+
+[output]
+# Output khusus Waybar (jangan diubah)
+method = raw
+raw_target = /dev/stdout
+data_format = ascii
+ascii_max_range = 7

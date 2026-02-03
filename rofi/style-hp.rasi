@@ -1,0 +1,86 @@
+/* Import warna dari Wal */
+@import "~/.cache/wal/rofi-colors.rasi"
+@import "~/.cache/wal/rofi-image.rasi"  /* <-- TAMBAHKAN INI */
+
+configuration {
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Papirus"; /* Ganti sesuai icon pack Abang */
+    display-drun: "";
+    drun-display-format: "{name}";
+}
+
+window {
+    width: 400px;        /* Lebar ala HP */
+    height: 600px;       /* Tinggi ala HP */
+    border: 2px;
+    border-color: @color4;
+    border-radius: 20px; /* Sudut melengkung */
+    background-color: @background;
+    
+    /* Biar posisinya di tengah */
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    background-color: transparent;
+    spacing: 0;
+}
+
+/* --- BAGIAN ATAS (GAMBAR) --- */
+inputbar {
+    /* Ini yang bikin ada gambarnya */
+    background-image: @current-image;
+    
+    padding: 150px 20px 20px 20px; /* Padding atas digedein biar gambar kelihatan */
+    children: [ entry ];
+    border-radius: 20px 20px 0 0;
+}
+
+entry {
+    /* Kolom ketik search */
+    background-color: @background; /* Kotak gelap transparan */
+    text-color: @foreground;
+    placeholder: "Search Apps...";
+    placeholder-color: @foreground;
+    padding: 15px;
+    border-radius: 12px;
+    horizontal-align: 0.5; /* Teks di tengah */
+}
+
+/* --- BAGIAN BAWAH (LIST APLIKASI) --- */
+listview {
+    padding: 20px;
+    spacing: 10px;
+    background-color: transparent;
+    columns: 1;
+    lines: 7;
+}
+
+element {
+    background-color: transparent;
+    text-color: @foreground;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0 10px 0 0;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+/* Efek pas dipilih */
+element selected {
+    background-color: @color4; /* Warna aksen wal */
+    text-color: @background;
+}

@@ -1,0 +1,108 @@
+/* --- TEMA ROFI GALAXY V2 (FULL PURPLE) --- */
+
+* {
+    /* PALET WARNA GALAXY TRANSPARAN */
+    
+    /* GANTI BARIS INI (Tambahkan CC di belakang) */
+    bg-col:  #1e1e2eCC;    
+    
+    bg-col-light: #1e1e2e;
+    border-col: #cba6f7;
+    selected-col: #cba6f7;
+    accent: #f5c2e7;
+    fg-col: #cdd6f4;
+    fg-col2: #1e1e2e;
+    grey: #6c7086;
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 400px;            /* Saya tinggiin dikit biar lega */
+    border: 3px;
+    border-color: @border-col;
+    background-color: @bg-col;
+    border-radius: 20px;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @border-col; /* SEKARANG UNGU */
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 10px;      /* Lebih bulat */
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+    placeholder: "Cari Aplikasi...";
+    placeholder-color: @grey;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    lines: 6;                 /* Muat lebih banyak baris */
+    background-color: @bg-col;
+}
+
+element {
+    padding: 8px;             /* Lebih tebal biar enak dilihat */
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+element-icon {
+    size: 28px;               /* Ikon digedein */
+}
+
+element selected {
+    background-color:  @selected-col; 
+    text-color: @fg-col2;
+    border-radius: 10px;
+}
+
+mode-switcher {
+    spacing: 0;
+    margin: 10px;             /* Kasih jarak dari list */
+}
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @border-col;    /* SEKARANG TEKSNYA UNGU */
+}

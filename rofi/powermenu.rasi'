@@ -1,0 +1,62 @@
+/* --- WARNA --- */
+* {
+    bg: #010103;
+    fg: #c7caf2;
+    sel: #354CAA;
+    text-color: @fg;
+    background-color: transparent;
+}
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    location: north;
+    y-offset: 50px;
+    
+    /* Lebar total Jendela (Harus cukup buat 6 tombol) */
+    width: 900px;
+    height: 100px;
+    
+    background-color: @bg;
+    border: 2px;
+    border-color: @fg;
+    border-radius: 10px;
+    
+    children: [ mainbox ];
+}
+
+mainbox {
+    children: [ listview ];
+    padding: 10px;
+}
+
+listview {
+    /* JANGAN PAKAI COLUMNS/LINES BIAR GAK BINGUNG */
+    layout: horizontal;  /* Susun menyamping */
+    spacing: 10px;       /* Jarak antar tombol */
+}
+
+element {
+    /* --- INI KUNCINYA BANG! --- */
+    /* Kita kunci lebar tiap tombol biar gak saling dorong */
+    width: 135px; 
+    
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-color: @fg;
+}
+
+element selected {
+    background-color: @sel;
+    text-color: @bg;
+}
+
+element-text {
+    font: "Sans Bold 12";
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: inherit;
+}

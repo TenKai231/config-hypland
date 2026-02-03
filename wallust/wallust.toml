@@ -1,0 +1,31 @@
+# Config Wallust
+backend = "kmeans"
+color_space = "labmixed"
+palette = "dark16"
+threshold = 20
+
+# --- CONFIG WAYBAR (INI YANG PENTING) ---
+[[entry]]
+template = "waybar.css"
+target = "/home/wawan/.config/waybar/style.css"
+
+# --- CONFIG LAINNYA ---
+[[entry]]
+template = "cava.config"
+target = "/home/wawan/.config/cava/config"
+
+[[entry]]
+template = "colors-kitty.conf"
+target = "/home/wawan/.cache/wal/colors-kitty.conf"
+
+[[entry]]
+template = "colors-rofi.rasi"
+target = "/home/wawan/.cache/wal/colors-rofi-dark.rasi"
+
+[[entry]]
+template = "colors-spicetify.ini"
+target = "/home/wawan/.cache/wal/colors.ini"
+
+[[entry]]
+template = "colors-hyprland.conf"
+target = "/home/wawan/.cache/wal/colors-hyprland.conf"

@@ -1,0 +1,99 @@
+/***** ROFI MODERN GRID THEME *****/
+
+configuration {
+    modi:                       "drun,run";
+    show-icons:                 true;
+    display-drun:               "🚀 APPS";
+    display-run:                "💻 RUN";
+    drun-display-format:        "{name}";
+    font:                       "JetBrainsMono Nerd Font Bold 12";
+}
+
+/* Import warna dari Pywal biar matching sama Wallpaper! */
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+window {
+    transparency:               "real";
+    width:                      45%;    /* Lebar menu (45% layar) */
+    height:                     60%;    /* Tinggi menu */
+    border:                     3px;
+    border-color:               @selected-active-background; /* Warna Border ikut Pywal */
+    border-radius:              20px;   /* Sudut membulat (Rounded) */
+    background-color:           #1e1e2ecc; /* Background gelap transparan */
+
+    padding:                    20px;
+}
+
+mainbox {
+    background-color:           transparent;
+    children:                   [ inputbar, listview ];
+    spacing:                    20px;
+    padding:                    20px;
+}
+
+/* --- KOLOM PENCARIAN (SEARCH BAR) --- */
+inputbar {
+    background-color:           @background;
+    border-radius:              15px;
+    padding:                    15px;
+    children:                   [ prompt, entry ];
+    border:                     2px;
+    border-color:               @active-background;
+}
+
+prompt {
+    background-color:           transparent;
+    text-color:                 @foreground;
+    padding:                    0 10px 0 0;
+    font:                       "JetBrainsMono Nerd Font Bold 14";
+}
+
+entry {
+    background-color:           transparent;
+    text-color:                 @foreground;
+    placeholder:                "Cari Aplikasi...";
+    placeholder-color:          @foreground;
+    font:                       "JetBrainsMono Nerd Font 14";
+}
+
+/* --- DAFTAR APLIKASI (GRID MODE) --- */
+listview {
+    background-color:           transparent;
+    columns:                    4;      /* 4 Kotak ke samping */
+    lines:                      3;      /* 3 Baris ke bawah */
+    spacing:                    15px;   /* Jarak antar kotak */
+    cycle:                      false;
+    dynamic:                    true;
+    layout:                     vertical;
+}
+
+element {
+    background-color:           transparent;
+    text-color:                 @foreground;
+    orientation:                vertical; /* Ikon di Atas, Teks di Bawah */
+    border-radius:              15px;
+    padding:                    20px 10px;
+}
+
+element selected {
+    background-color:           @selected-active-background; /* Warna pas dipilih */
+    text-color:                 @background;
+    border:                     0px;
+    border-radius:              15px;
+}
+
+element-icon {
+    size:                       72px;   /* Ukuran Ikon BESAR */
+    horizontal-align:           0.5;
+    vertical-align:             0.5;
+    background-color:           transparent;
+    cursor:                     inherit;
+}
+
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    horizontal-align:           0.5;    /* Teks Rata Tengah */
+    vertical-align:             0.5;
+    margin:                     10px 0 0 0;
+}

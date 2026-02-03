@@ -1,0 +1,169 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 34,
+    "modules-left": [
+        "custom/notification",
+        "hyprland/workspaces",
+        "wlr/taskbar",
+        // "cpu",
+        // "memory",
+        "mpris"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/cava"
+    ],
+    "modules-right": [
+        "custom/dashboard",
+        "tray",
+	"idle_inhibitor",
+        "pulseaudio",
+        "battery",
+        "custom/power"
+    ],
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate",
+        "format": "{icon}",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": []
+        }
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip": true,
+        "tooltip-format": "{title}",
+        "on-click": "activate",       /* Klik Kiri: Buka/Panggil Jendela */
+        "on-click-middle": "close",   /* Klik Tengah: Tutup Jendela */
+        "on-click-right": "minimize-raise", /* Klik Kanan: UMPETIN (Minimize) */
+        "ignore-list": [
+           "wofi"
+        ],
+        "app_ids-mapping": {
+            "firefox-developeredition": "firefox-developer-edition"
+        }
+    },
+
+    "cpu": {
+        "interval": 3,
+        "format": " {usage}%",
+        "max-length": 10
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {percentage}%",
+        "max-length": 10
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": " {:%H:%M    %d %b}",
+        "on-click": "eww open --toggle dashboard",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar-weeks-pos": "right",
+        "today-format": "<b><u>{}</u></b>",
+        "tooltip": false
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "mpris": {
+        "format": "  {artist} - {title}",
+        "format-paused": "⏸  <i>{artist} - {title}</i>",
+        "max-length": 50,
+        "interval": 1,
+        "on-click": "playerctl previous",
+        "on-click-middle": "playerctl play-pause",
+        "on-click-right": "playerctl next"
+    },
+  
+    "custom/dashboard": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "~/.config/eww/dashboard/launch_dashboard",
+        "interval": "once"
+    },
+
+    "custom/power": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "wlogout"
+    },
+
+    "custom/cava": {
+    "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/;//g;s/0/ /g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'",
+    "format": "{}",
+    "on-click": "pavucontrol"
+},
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='#f38ba8'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='#f38ba8'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='#f38ba8'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='#f38ba8'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+   "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "☕",
+        "deactivated": "💤"
+    },
+    "tooltip": true,
+    "tooltip-format-activated": "Mode Begadang: ON (Gak bakal tidur)",
+    "tooltip-format-deactivated": "Mode Normal (Bisa tidur otomatis)"
+     },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    }
+}

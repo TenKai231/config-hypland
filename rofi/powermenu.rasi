@@ -1,0 +1,66 @@
+/* --- WARNA --- */
+* {
+    bg: #010103;
+    fg: #c7caf2;
+    sel: #354CAA;
+    text-color: @fg;
+    background-color: transparent;
+}
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    location: north;
+    y-offset: 50px;
+    width: 900px;
+    height: 100px;
+    
+    background-color: @bg;
+    border: 2px;
+    border-color: @fg;
+    border-radius: 10px;
+    
+    children: [ mainbox ];
+}
+
+mainbox {
+    children: [ listview ];
+    padding: 15px;
+}
+
+listview {
+    /* --- INI RAHASIANYA --- */
+    /* Hapus 'layout: horizontal;' */
+    /* Biarkan default (vertical), tapi kita paksa jadi 6 kolom */
+    columns: 6;
+    lines: 1; 
+    
+    /* Matikan scrollbar biar gak makan tempat */
+    scrollbar: false;
+    spacing: 15px;
+}
+
+element {
+    /* Hapus 'width' manual biar dia bagi rata sendiri secara otomatis */
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-color: @fg;
+    
+    /* Pastikan teks rata tengah */
+    children: [ element-text ];
+}
+
+element selected {
+    background-color: @sel;
+    text-color: @bg;
+}
+
+element-text {
+    font: "Sans Bold 12";
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    text-color: inherit;
+}
