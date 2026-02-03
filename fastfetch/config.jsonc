@@ -1,0 +1,106 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/wawan/.config/fastfetch/logo.png",
+    "type": "kitty",
+    "height": 15,
+    "width": 30,
+    "padding": {
+      "top": 2,
+      "right": 4
+    }
+  },
+  "display": {
+    "separator": " : "
+  },
+  "modules": [
+    // === Bagian HARDWARE ===
+    {
+      "type": "custom",
+      "format": "\u001b[32m-------------------Hardware-------------------",
+      "key": " "
+    },
+    {
+      "type": "host",
+      "key": "PC",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "cpu",
+      "key": "CPU",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "gpu",
+      "key": "GPU",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "memory",
+      "key": "RAM",
+      "keyColor": "yellow"
+    },
+    "break",
+
+    // === Bagian SOFTWARE ===
+    {
+      "type": "custom",
+      "format": "\u001b[32m-------------------Software-------------------",
+      "key": " "
+    },
+    {
+      "type": "os",
+      "key": "OS",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "kernel",
+      "key": "Kernel",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "packages",
+      "key": "Paket",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "shell",
+      "key": "Shell",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "wm",
+      "key": "WM",
+      "keyColor": "yellow"
+    },
+    {
+      "type": "terminal",
+      "key": "Terminal",
+      "keyColor": "yellow"
+    },
+    "break",
+
+    // === Bagian UPTIME (Waktu & Tanggal dihapus) ===
+    {
+      "type": "custom",
+      "format": "\u001b[32m--------------------Uptime--------------------",
+      "key": " "
+    },
+    {
+      "type": "uptime",
+      "key": "Uptime",
+      "keyColor": "yellow"
+    },
+    "break",
+    
+    // === Warna Bulat (Jarak Jauh) ===
+    {
+        "type": "custom",
+        "format": "\u001b[30m●      \u001b[31m●      \u001b[32m●      \u001b[33m●      \u001b[34m●      \u001b[35m●      \u001b[36m●      \u001b[37m●"
+    },
+    {
+        "type": "custom",
+        "format": "\u001b[90m●      \u001b[91m●      \u001b[92m●      \u001b[93m●      \u001b[94m●      \u001b[95m●      \u001b[96m●      \u001b[97m●"
+    }
+  ]
+}
